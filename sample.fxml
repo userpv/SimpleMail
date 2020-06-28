@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="666.0" prefWidth="615.0">
+         <children>
+            <Pane fx:id="pane_enter" layoutX="69.0" layoutY="14.0" prefHeight="200.0" prefWidth="504.0">
+               <children>
+                  <PasswordField fx:id="password_enterField" layoutX="78.0" layoutY="88.0" prefHeight="25.0" prefWidth="253.0" />
+                  <Label alignment="CENTER" layoutX="78.0" layoutY="7.0" prefHeight="35.0" prefWidth="253.0" text="Войти" />
+                  <TextField fx:id="text_enterLogin" layoutX="78.0" layoutY="49.0" prefHeight="25.0" prefWidth="253.0" />
+                  <Button fx:id="btn_enter" layoutX="239.0" layoutY="134.0" mnemonicParsing="false" onAction="#onClick_enter" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: green;" text="Войти" textFill="WHITE" />
+                  <Button fx:id="btn_reg" layoutX="77.0" layoutY="134.0" mnemonicParsing="false" onAction="#onClick_reg_begin" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: blue;" text="Зарегистрироваться" textFill="#f8f8f8" />
+                  <Text fx:id="incorrect_password" disable="true" fill="#e80606" layoutX="78.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный логин или пароль" textAlignment="CENTER" visible="false" wrappingWidth="253.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pane_box" disable="true" layoutX="21.0" layoutY="17.0" prefHeight="185.0" prefWidth="581.0" visible="false">
+               <children>
+                  <VBox layoutX="14.0" layoutY="88.0" prefHeight="245.0" prefWidth="175.0">
+                     <children>
+                        <Button fx:id="btn_write" mnemonicParsing="false" onAction="#onClick_Write" prefHeight="38.0" prefWidth="210.0" text="Написать письмо" />
+                        <Button fx:id="btn_received" mnemonicParsing="false" onAction="#onClick_Receive" prefHeight="38.0" prefWidth="210.0" text="Входящие" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="btn_Exit" layoutX="432.0" layoutY="2.0" mnemonicParsing="false" onAction="#onClick_Exit" prefHeight="25.0" prefWidth="149.0" text="Выход" />
+               </children>
+            </Pane>
+            <Pane fx:id="pane_reg" disable="true" prefHeight="666.0" prefWidth="615.0" visible="false">
+               <children>
+                  <Button fx:id="btn_reg_finish" layoutX="98.0" layoutY="287.0" mnemonicParsing="false" onAction="#onClick_reg_complete" prefHeight="25.0" prefWidth="210.0" text="Зарегистрироваться" />
+                  <TextField fx:id="textName" layoutX="198.0" layoutY="71.0" />
+                  <TextField fx:id="textFamilyName" layoutX="198.0" layoutY="122.0" />
+                  <TextField fx:id="textLogin" layoutX="198.0" layoutY="181.0" />
+                  <PasswordField fx:id="passwordField" layoutX="198.0" layoutY="241.0" />
+                  <Label alignment="CENTER" layoutX="71.0" layoutY="72.0" prefHeight="23.0" prefWidth="101.0" text="Имя" />
+                  <Label alignment="CENTER" layoutX="71.0" layoutY="123.0" prefHeight="23.0" prefWidth="101.0" text="Фамилия" />
+                  <Label alignment="CENTER" layoutX="71.0" layoutY="182.0" prefHeight="23.0" prefWidth="101.0" text="Логин" />
+                  <Label alignment="CENTER" layoutX="71.0" layoutY="243.0" prefHeight="23.0" prefWidth="101.0" text="Пароль" />
+               </children>
+            </Pane>
+            <Pane fx:id="pane_send" disable="true" layoutY="192.0" prefHeight="404.0" prefWidth="607.0" visible="false">
+               <children>
+                  <Button fx:id="btn_Send" layoutX="387.0" layoutY="356.0" mnemonicParsing="false" onAction="#onClick_Send" prefHeight="25.0" prefWidth="188.0" text="Отправить" />
+                  <TextArea fx:id="write_later" layoutX="20.0" layoutY="142.0" prefHeight="200.0" prefWidth="555.0" />
+                  <TextField fx:id="titleLater" layoutX="217.0" layoutY="35.0" prefHeight="25.0" prefWidth="210.0" />
+                  <TextField fx:id="receiver" layoutX="217.0" layoutY="100.0" prefHeight="25.0" prefWidth="210.0" />
+                  <Label alignment="CENTER" layoutX="217.0" layoutY="6.0" prefHeight="25.0" prefWidth="204.0" text="Тема" />
+                  <Label alignment="CENTER" layoutX="217.0" layoutY="68.0" prefHeight="25.0" prefWidth="210.0" text="Кому" />
+               </children>
+            </Pane>
+            <Pane fx:id="pane_read" disable="true" layoutX="6.0" layoutY="221.0" prefHeight="445.0" prefWidth="555.0" visible="false">
+               <children>
+                  <TextArea fx:id="read_latter" layoutY="59.0" prefHeight="377.0" prefWidth="555.0" />
+                  <Label fx:id="sender_login" layoutX="168.0" layoutY="2.0" prefHeight="25.0" prefWidth="204.0" />
+                  <Label fx:id="sender_name" layoutX="168.0" layoutY="27.0" prefHeight="25.0" prefWidth="204.0" />
+               </children>
+            </Pane>
+            <ListView fx:id="listLater" disable="true" layoutX="46.0" layoutY="202.0" onMouseClicked="#onClick_Read" prefHeight="445.0" prefWidth="494.0" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>
